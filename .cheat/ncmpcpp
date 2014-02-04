@@ -1,0 +1,6 @@
+# Only show music matching 'Opeth':
+CTR-f Opeth
+
+# Switch the primary aribute of the first browser column:
+`
+You can now switch between eg Artist, Album-Artist, etc.

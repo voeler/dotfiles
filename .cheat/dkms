@@ -1,0 +1,4 @@
+# Om alle modules opnieuw te builden voor nieuwste kernel:
+dkms autoinstall -k $(uname -r)
+# Voor mijn huidige wifi moet je dit daarna nog volgen met
+modprobe 8192cu

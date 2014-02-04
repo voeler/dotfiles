@@ -1,0 +1,18 @@
+# To convert a mkv - or probably any other supported codec/container - to mpeg format:
+ffmpeg -i INPUT -target pal-dvd -aspect 16:9 OUTPUT
+# NB: If the input file contains multiple audio streams for example, you need to use the `-map` option.
+
+# Xbox requires mp4 h264 aac (stero only?)
+# To change only the container (e.g. from mkv to mp4):
+ffmpeg -i INPUT -c copy OUTPUT.mp4
+# To additionally change the audio codec to AAC:
+ffmpeg -i INPUT -c copy -acodec aac (-strict -2) OUTPUT.mp4
+# To additionally change audio to 2 channel stereo:
+ffmpeg -i INPUT -c copy -acodec aac -ac 2 (-strict -2) OUTPUT.mp4
+
+# To add a srt subtitle stream to the already properly encoded video
+# into mp4 container:
+ffmpeg -i INPUT -i SUBS -c copy -acodec copy|aac (-strict -2) -scodec mov_text OUTPUT.mp4
+
+# To add a srt subtitle stream to the already properly encoded mkv:
+mkvmerge (gui)

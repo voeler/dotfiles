@@ -1,0 +1,13 @@
+## Notes om dingen naar pdf te converteren
+
+# Converteer afbeeldingen naar een pdf:
+convert *.png doc.pdf
+convert * doc.pdf
+
+# Om code naar pdf te converteren
+a2ps		to ps
+ps2pdf		convert ps from a2ps to pdf file
+pdfmerge?
+# Or...
+use the mcode package i downloaded (see Control System Design report
+for how to use it)

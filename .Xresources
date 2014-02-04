@@ -1,0 +1,54 @@
+! terminal colors -------------------------------------------------------
+
+*background: #111111
+*foreground: #babdb6
+
+!black
+*color0:#293b3b
+*color8:#344040
+
+!red
+*color1:#bf5357
+*color9:#bf6367
+
+!green
+*color2:#41a551
+*color10:#51a55f
+
+!yellow
+*color3:#aea64f
+*color11:#aea75d
+
+!blue
+*color4:#416ea5
+*color12:#5177a5
+
+!magenta
+*color5:#bf6053 
+*color13:#bf6e63
+
+!cyan
+*color6:#714da5
+*color14:#7859a5
+
+!white
+*color7:#876868
+*color15:#876f6f
+
+
+
+! xterm -----------------------------------------------------------------
+
+xterm*geometry:           80x25
+xterm*faceName:           inconsolata:normal:pixelsize=14
+xterm*dynamicColors:      true
+xterm*utf8:               2
+xterm*eightBitInput:      true
+xterm*saveLines:          512
+xterm*scrollKey:          true
+xterm*scrollTtyOutput:    false
+xterm*scrollBar:          false
+xterm*rightScrollBar:     true
+xterm*jumpScroll:         true
+xterm*multiScroll:        true
+xterm*toolBar:            false

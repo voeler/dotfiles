@@ -1,0 +1,5 @@
+# Om een nieuwe grub-config te genereren:
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# Om een grub te plaatsen op de MBR van schijf /dev/sdx:
+grub-install --target=i386-pc --recheck --debug /dev/sdx

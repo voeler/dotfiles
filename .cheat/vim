@@ -1,0 +1,114 @@
+# File management
+:e              reload file
+:wall			save all files
+:hide			to hide the current file, but remember (not save) changes
+:buffers		show hidden files
+:buffer 1		unhide hidden file 1
+gf				find and edit file under cursor
+			
+# Movement
+{ of }			move per paragraph
+t=				move until the next occurence of the =-character
+				jump to next match with ; and ,
+f=				move onto the next occurence of the =-character
+b=				move unto  the next occurence of the =-character
+*				search the next occurence of the current word
+%				jump to matching opening/closeing brache. or eg #if / #endif
+gd				jump to the local declaration of the current variable
+42G         go to line 42
+''				jump back to where you came from
+
+# Insertion
+#   Enter insertion mode and:
+A               append at the end of the line
+I               insert at the beginning of the line
+R               enter insert mode but replace instead of inserting chars
+:r {file}       insert from file
+C				delete everything after cursor and enter edit mode
+
+# Editing
+P               paste before cursor
+ctrl-A			repeat the last inserted text
+gu				convert to lowercase
+gU				convert to uppercase
+g~				swap cases
+d/foo			delete until the next occurence of foo
+J				join lines (remove newline)
+
+# Text objects
+iw				current word
+_				current line
+ip				current paragraph
+i"				text between the quotes
+a"				text between the quotes + the quotes themselves
+dw				delete word from cursor
+
+# Save as root
+:w !sudo tee %
+:w !sudo tee > /dev/null %
+
+# Search and replace
+:s/foo/bar/g	replace all foo with bar
+:s/foo/bar/gc	idem, ask for confirmation
+:%s				replace in ALL lines
+
+# Regexp
+/19[0-9][0-9]\|20[0-9][0-9]		search for any year in 19xx or 20xx
+\a				same as [a-zA-Z]
+\d				digit
+<y>ctr-A increase number under cursor by y
+t.e				search for any 3-letter word which starts with t and ends 
+				with e
+the\>			only if a word ends with the
+\<the			only if a word starts with the
+\c				case insensitive search
+\C				case sensitive search
+
+
+# Splitting windows
+:split			split window horizontally
+ctrl-w w		switch windows
+ctrl-w ctrl-w	switch windows
+:only			close all windows except the current one
+
+# Using registers
+Registers are used to saved eg yanked or deleted text, but also to save macros!
+"np				paste the text in the n register
+@n				execute the text in the n register as if they are a vim command sequence
+This way you can easily modify a macro and then put it back in the register with:
+"ny
+* register is supposed to be X11 clipboard?
+
+# Useful commands
+:oldfiles					list previously edited files
+:mksession vimbook.vim		save current session, including opened files, window 
+:source vimbook.vim			to restore
+
+# Block selection
+ctr-v om block selection te doen. Daarna kun je met shift-i de tekst 
+veranderen, of bijvoorbeeld c gebruiken. Let op: tijdens editen zie je 
+alleen de 1e lijn veranderen, pas als je insert-mode verlaat zie je alle
+regels veranderen.
+A zal bijvoorbeeld achter alle regels iets toevoegen, ook al zijn ze niet 
+even lang, etc. Dit kan voorbij de selectie zijn.
+
+# Spelling
+set spel on  to enable spelling check
+z=    		 to suggest correct word
+zg			 to add word to list of correct words
+
+# Folding
+zf			fold a section, e.g. a paragraph: zfap
+zo			open a fold
+zc			close a fold again
+folds can be nested:
+zr/zm		to close/open all folds in a nested level
+zR/zM		open/close all folds
+zx 			repars for automatic folding (e.g. for vimtex plugin)
+
+folds can be deleted, yanked, etc
+
+# External programs
+qmv					calls vim to batch rename files
+:%!column -t 		align columns of selection
+:set nopaste 		to paste into vim and keep indentation intact

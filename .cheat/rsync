@@ -1,0 +1,12 @@
+# copy files from remote to local, maintaining file propertires and sym-links (-a), zipping for faster transfer (-z), verbose (-v).  
+rsync -avz host:file1 :file1 /dest/
+rsync -avz /source host:/dest
+
+# Copy files using checksum (-c), rather than time, to detect if the file has changed. (Useful for validating backups). 
+rsync -avc /source/ /dest/
+
+# Backup system
+Mount /dev/sda8 op bijvoorbeeld /mnt/arch-hdd
+Werkt alleen in bash:
+sudo rsync -aAXv (--delete) /* /mnt/arch-hdd
+--exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/var/lib/pacman/sync/*,/home/*/.mozilla/firefox/*.default/Cache/*,/home/*/.thumbnails/*,/var/cache/pacman/pkg,/var/log/journal,/var.old}

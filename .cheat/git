@@ -1,0 +1,32 @@
+# To commit staged changes
+git commit -m "Your commit message"
+
+# To edit previous commit message
+git commit --amend
+
+# To push to the tracked master branch:
+git push origin master
+
+# Origin is a reference to the repo that was cloned from.
+# To add a reference yourself:
+git remote add [reference name] https://github.com/vluggejapie/dotfiles.git
+git push [reference name] master
+
+# Or to push to a specified repository:
+git push git@github.com:username/project.git
+
+# To show files tracked by a reop
+git ls-tree --full-tree -r HEAD
+
+# To show the history of the commits and branches in a graph-style tree
+git log --graph --decorate --all (--oneline for compactness)
+
+# Merge/squash the last N commits without using rebase or squash command
+git reset --soft COMMIT
+git commit
+
+# Delete commits up to COMMIT, also discards uncommited/staged edits
+git reset --hard COMMIT
+
+# Delte commits up to COMMIT, but keep the changes made to source files
+git reset --soft COMMIT

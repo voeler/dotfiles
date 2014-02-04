@@ -1,0 +1,6 @@
+# Upgrade aur packages. Use a second time with --devel to seperately upgrade development packages (git, svn, etc.). Use --needed to only update devel packages that are out of date
+pacaur -u (--devel --needed)
+
+# Install as dependency
+--asdeps		not mentioned in man page, but is a valid option!
+
